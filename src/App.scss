@@ -1,0 +1,402 @@
+@import url(https://fonts.googleapis.com/css?family=Poiret+One);
+@import url(https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css);
+@import "./sass/mixin.scss";
+@import "./sass/buttons.scss";
+@import "./sass/form.scss";
+@import "./sass/apex.scss";
+
+$border-radius: 20px;
+
+body {
+  background: #9CECFB;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #0052D4, #65C7F7, #9CECFB);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #0052D4, #65C7F7, #9CECFB); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
+  font-family: Poiret One;
+  color:white;
+
+  .CityData {
+    margin-left:-15px;
+    margin-right:-15px;
+  }
+
+  .row {
+    margin:0;
+  }
+}
+
+
+.top-lft-col {
+
+  .temperature {
+
+    padding:0;
+
+    h2 {
+      color: black;
+      font-size: 50px;
+      font-weight:bold;
+      letter-spacing: 3px;
+      padding-top:20px;
+
+      @include for-size(tablet-landscape-up) {    
+        font-size: 60px;
+        padding:10px;
+        letter-spacing: 4px;
+      }
+    }
+
+    img.icon {
+      margin:0 0 0 -16px;
+    }
+  }
+
+  div.min-max-temp {
+  
+    max-width:50px;
+    padding:0;
+    text-align: center;
+
+    @include for-size(tablet-landscape-up) {    
+      padding:14px 0;
+    }
+
+
+    h4.temp-min, h4.temp-max{
+      font-weight:bold;
+      display: block;
+      padding:4px;
+      letter-spacing:2px;
+      margin:0;
+      font-size:20px;
+
+      @include for-size(tablet-landscape-up) {    
+        
+        padding:5px;
+        letter-spacing:4px;
+      }
+    }
+
+
+    h4.temp-min {
+      background-color:#4FB6FF;
+    }
+    
+    h4.temp-max {
+      background-color:hsl(4, 100%, 65%);
+      display: block;
+    }
+  }
+
+}
+
+.top-mid {
+
+  text-align: center;
+
+  h3.weatherCondition{
+    text-transform: uppercase;
+    font-weight:1000;
+    letter-spacing: 2px;
+
+    font-size:1.2em;
+
+    @include for-size(tablet-landscape-up) {    
+      font-size:1.8em;
+    }
+  }
+
+  .icon {
+    width:70%;
+    @include for-size(tablet-landscape-up) {    
+      width:auto;
+    }
+  }
+
+}
+
+.fa-arrow-circle-up{
+  color: #70C1B3;
+  font-size: 2em !important;
+}
+
+
+.findCity {
+  border-radius: $border-radius;
+  box-shadow: 0 27px 55px 0 rgba(0, 0, 0, 0.3), 0 17px 17px 0 rgba(0, 0, 0, 0.15);
+  margin-top:50px;
+}
+
+.widgetCont {
+
+  @include for-size(tablet-landscape-up) {    
+    width: 640px;
+    margin-top:50px;
+    margin-bottom:50px;
+  }
+
+  .forecastPrnt {
+
+    .btn-secondary{
+        color: black;
+        font-weight: bold;
+        border:1px solid gray;
+        background-color: floralwhite;
+    }
+
+    .mixed-chart {
+      padding-left:10px;
+    }
+  }
+
+  div.top-lft-col {
+
+    padding:10px;
+
+    @include for-size(tablet-landscape-up) {    
+      padding:20px;
+    }
+
+    .place{
+
+      h2 {
+        font-weight:1000;
+        margin:10px 0;
+        text-transform: uppercase;
+        font-size:1.3em;
+        letter-spacing: 2px;
+
+        @include for-size(tablet-landscape-up) {    
+          font-size:2em;
+        }
+      }
+  
+      h3 {
+        font-weight: bold;
+        text-transform:uppercase;
+        letter-spacing: 3px;
+        font-size:1.2em;
+        margin-bottom: 0 0 10px 0;
+
+        @include for-size(tablet-landscape-up) {    
+          font-size:1.75em;
+        }
+      }
+    }
+  }
+
+  div.top-rgt-col {
+
+    padding:30px 0 0 0;
+    max-width:40%;
+
+    p.todayDetails{
+      font-weight: bold;
+      margin-bottom:10px;
+      letter-spacing:2px;
+      font-size:1em;
+      color:black;
+
+      
+    }
+  }
+
+  div.bottom-rgt-col {
+    background: #70C1B3;
+
+    h3 {
+      color:black;
+      display:block;
+      text-align:center;
+    }
+    .col {
+      text-align:center;
+    }
+    span.direction {
+      font-size:70px;
+    }
+    .windSpeed {
+      font-size: 70px;
+      margin-top: 10px;
+    }
+
+    .windDirection {
+      color:red;
+
+    }
+  }
+
+  span.supb {
+    font-size: 16px;
+    font-weight: 800;
+    margin-left: 4px;
+  }
+
+  .dailyTempsCont {
+    position:absolute;
+    bottom: 0;
+
+    @include for-size(tablet-landscape-up) {
+      position:relative;
+    }
+  }
+  
+  .five-day-single-con {
+
+    padding:0;
+    
+    @include for-size(tablet-landscape-up) {
+      padding:10px 20px;
+    }
+
+    .fa {
+      color: #4CAAEE;
+    }
+    
+    .five-day-single {
+        background-color: #95E7FA;
+        padding:4px;
+        text-align: center;
+        margin: 1px;
+        color: black;
+
+        @include for-size(tablet-landscape-up) {
+        }
+
+        img.icon {
+          width:95%;
+        }
+
+        .weekday {
+          display:block;
+          font-size:24px;
+          font-weight:bold;
+          letter-spacing: 2px;
+        }
+
+        .min-max, .windTime {
+          
+          display:block;
+          font-size:13px;
+          font-weight:bold;
+
+          @include for-size(tablet-landscape-up) {
+            
+            font-size:20px;
+            letter-spacing:2px;
+          }
+        }
+
+        .min-temp {
+          color:#0254D4;
+        }
+
+        .max-temp {
+          color:#EC6E4C;
+        }
+
+
+
+        .windSpeed{
+
+          display:block;
+          font-size:24px;
+          font-weight:bold;
+        }
+    }
+
+    .active {
+      background-color: #5FC0F5;
+      color: black;
+    }
+
+  }
+
+  
+  
+  .date {
+    font-size: 30px;
+    font-weight: 800;
+  }
+}
+
+.txtAnim {
+  animation: fadein 2s;
+  -moz-animation: fadein 2s; /* Firefox */
+  -webkit-animation: fadein 2s; /* Safari and Chrome */
+  -o-animation: fadein 2s; /* Opera */
+}
+@keyframes fadein {
+  from {
+      opacity:0;
+  }
+  to {
+      opacity:1;
+  }
+}
+@-moz-keyframes fadein { /* Firefox */
+  from {
+      opacity:0;
+  }
+  to {
+      opacity:1;
+  }
+}
+@-webkit-keyframes fadein { /* Safari and Chrome */
+  from {
+      opacity:0;
+  }
+  to {
+      opacity:1;
+  }
+}
+@-o-keyframes fadein { /* Opera */
+  from {
+      opacity:0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+
+.cross-fade-leave {
+  opacity: 1;
+}
+.cross-fade-leave.cross-fade-leave-active {
+  opacity: 0;
+  transition: opacity 1s ease-in;
+}
+
+.cross-fade-enter {
+  opacity: 0;
+}
+.cross-fade-enter.cross-fade-enter-active {
+  opacity: 1;
+  transition: opacity 1s ease-in;
+}
+
+.cross-fade-height {
+  transition: height 0.5s ease-in-out;
+}
+
+.fade-wait-leave {
+  opacity: 1;
+}
+.fade-wait-leave.fade-wait-leave-active {
+  opacity: 0;
+  transition: opacity 0.4s ease-in;
+}
+
+.fade-wait-enter {
+  opacity: 0;
+}
+.fade-wait-enter.fade-wait-enter-active {
+  opacity: 1;
+  /* Delay the enter animation until the leave completes */
+  transition: opacity 0.4s ease-in 0.6s;
+}
+
+.fade-wait-height {
+  transition: height 0.6s ease-in-out;
+}

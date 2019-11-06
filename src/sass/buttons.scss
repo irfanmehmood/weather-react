@@ -1,0 +1,55 @@
+/* Style the tab */
+.tab {
+    overflow: hidden;
+    background: #91E5FA;
+    margin-left:-15px;
+    margin-right:-15px;
+
+
+    @include for-size(tablet-landscape-up) {
+            
+        margin-left:0;
+        margin-right:0px;
+    }
+    
+    button {
+        
+        background-color: inherit;
+        float: left;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        transition: 0.3s;
+        font-weight:bold;
+        padding: 7px;
+        font-size:1.1em;
+        letter-spacing: 1px;
+
+        @include for-size(tablet-landscape-up) {
+            font-size:18px;
+            padding: 14px 16px;
+        }
+
+        &:hover {
+            background-color: #ddd;
+        }
+
+        &.addLocation{
+            float:right;
+        }
+
+        &.active {
+            background-color: #5FC0F5;
+            color:white;
+        }
+    }
+  }
+
+  
+  /* Style the tab content */
+  .tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+  }
