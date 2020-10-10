@@ -1,9 +1,9 @@
-Install Project
----------------
-npm install #Install dependecies
+#Install dependecies
+npm install
 
+#Build Project
+npm run build
 
 Run Project
-----------------
-1. npm run start
+npm run start
 

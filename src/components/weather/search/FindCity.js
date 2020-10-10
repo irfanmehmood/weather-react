@@ -11,7 +11,7 @@ function FindCity(props) {
     /** Fires either prop or state is changed */
     useEffect(() => {
         if (InputValue.length > 3) {
-            axios.get(`http://www.digitalcook.co.uk:8001/api/city/find/${InputValue}`)
+            axios.get(`http://weather.digitalcook.co.uk:8001/api/city/find/${InputValue}`)
             .then(result => {
                 setFoundCities(result.data);
             });
