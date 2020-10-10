@@ -18,7 +18,7 @@ function WeatherWidget(props) {
     
     dispatch({type: 'setAjaxLoading', payload: true});
 
-    axios.get(`http://digitalcook.co.uk:3000/api/city/weather/${cityID}`)
+    axios.get(`http://www.digitalcook.co.uk:8001/api/city/weather/${cityID}`)
       .then(result => {
         dispatch({
             type: 'setWeatherData', 
