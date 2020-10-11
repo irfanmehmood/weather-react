@@ -56,7 +56,7 @@ import { Cookie } from './Cookie';
                         Cookie.cities = newStoredCities;
 
                         return {
-                            SelectedCityID: newStoredCities[newStoredCities.length-1], 
+                            SelectedCityID: newStoredCities[newStoredCities.length-1].id, 
                             WeatherData: state.WeatherData,
                             StoredCities: newStoredCities, 
                             ShowCityFinder: state.ShowCityFinder,
