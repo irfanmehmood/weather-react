@@ -11,7 +11,7 @@ function CitiesButtons(props) {
       className={`txtAnim tablinks ${appState.SelectedCityID === city.id ? 'active' : ""}`}
       onClick={ 
           () => dispatch({ 
-            type: 'setSelectedCityID', 
+            type: 'navCityButtonClicked', 
             payload: {
               'cityId' : city.id, 
               'AddCityNameToCookieList': false 

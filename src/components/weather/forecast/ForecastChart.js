@@ -2,6 +2,7 @@ import React, { useContext} from "react";
 import Chart from "react-apexcharts";
 import { WeatherContext } from "../../lib/WeatherContext";
 
+const TEMP_DIFFERENCE = -273.15;
 
 function ForecastChart(props) {
 
@@ -14,7 +15,9 @@ function ForecastChart(props) {
         for ( let i = 0; i < props.loopLength; i++ ) {
             
             let item = forecastData.list[i];
-            xAxisTempValues.push(Math.round(item.main.temp + (-273.15)));
+            
+            xAxisTempValues.push(Math.round(item.main.temp + (TEMP_DIFFERENCE)));
+
             let timeString = item.dt_txt.substr(11, 5);
             xAxisLabels.push(timeString);
         }

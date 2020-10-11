@@ -12,10 +12,10 @@ function FoundCitiesList(props) {
                 <li
                     onClick={ 
                         () => dispatch({ 
-                            type: 'setSelectedCityID', 
+                            type: 'addNewCity', 
                             payload: {
                                 'cityId' : city.id, 
-                                'AddCityNameToCookieList': true 
+                                'cityName': city.name
                             }
                         })
                     }

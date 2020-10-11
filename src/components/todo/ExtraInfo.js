@@ -4,8 +4,8 @@ class ExtraInfo extends React.Component {
       return (
             <>
                 <p>Humidity: {this.props.weatherData.main.humidity}%</p>
-                                        <p>Visibility: {this.props.weatherData.visibility / 1000} miles</p>
-                                        <p>Presseure: {this.props.weatherData.main.pressure} hpa</p>
+                <p>Visibility: {this.props.weatherData.visibility / 1000} miles</p>
+                <p>Presseure: {this.props.weatherData.main.pressure} hpa</p>
                                             
             </>
 

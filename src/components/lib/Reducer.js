@@ -40,28 +40,60 @@ import { Cookie } from './Cookie';
 
                     if (state.StoredCities.length > 1) {
 
-                        let lastCityInList;
-                        let afterCityRemFromList = [];
+                        let newStoredCities = [];
                 
+                        /* 
+                         *  Copy cities list from state to new immutable list, 
+                         *  excluding the city we just removed 
+                         */
                         state.StoredCities.forEach((city) => {
                             if(city.id !== state.SelectedCityID) {
-                            afterCityRemFromList.push(city);
+                                newStoredCities.push(city);
                             }
                         });
 
-                        lastCityInList = afterCityRemFromList[afterCityRemFromList.length-1];
-                        Cookie.cities = afterCityRemFromList;
+                        /** Save cities to cookie */
+                        Cookie.cities = newStoredCities;
 
                         return {
-                            SelectedCityID: lastCityInList.id, 
+                            SelectedCityID: newStoredCities[newStoredCities.length-1], 
                             WeatherData: state.WeatherData,
-                            StoredCities: afterCityRemFromList, 
+                            StoredCities: newStoredCities, 
                             ShowCityFinder: state.ShowCityFinder,
                             AddCityToCookie: state.AddCityToCookie,
                             AjaxLoading: state.AjaxLoading
                         };
                     }
                     break;
+
+            case 'addNewCity':
+
+                if (state.StoredCities.length < 5) {
+
+                    let newStoredCities = [];
+
+                    /** Copy cities list from state to new immutable list */
+                    state.StoredCities.forEach((city) => {
+                        newStoredCities.push(city);
+                    });
+                   
+                    /** Add new cirty found to list */
+                    newStoredCities.push({id: action.payload.cityId, name: action.payload.cityName});
+
+                    /** Save cities to cookie */
+                    Cookie.cities = newStoredCities;
+                    //console.log(newStoredCities);
+
+                    return {
+                        SelectedCityID: newStoredCities[newStoredCities.length-1].id, 
+                        WeatherData: state.WeatherData,
+                        StoredCities: newStoredCities, 
+                        ShowCityFinder: state.ShowCityFinder,
+                        AddCityToCookie: true,
+                        AjaxLoading: state.AjaxLoading
+                    };
+                }
+                break;
 
             case 'setWeatherData':
 
@@ -88,7 +120,7 @@ import { Cookie } from './Cookie';
                     AjaxLoading: false
                 };
 
-            case 'setSelectedCityID':
+            case 'navCityButtonClicked':
                 /**
                  * No need to change state if user is clicking same button,
                  * As it will keep on firing API requeset

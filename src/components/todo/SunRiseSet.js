@@ -3,16 +3,14 @@ class SunRiseSet extends React.Component {
     render() {
     
         const sunRiseDt = new Date(this.props.weatherData.sys.sunrise);
-            //sunRiseDt.setSeconds(sunRiseDt.getSeconds() + weatherData.timezone);
-            let sunRiseDtString = (sunRiseDt.getUTCHours() < 10 ? '0' + sunRiseDt.getUTCHours() : sunRiseDt.getUTCHours()) + ':';
-            sunRiseDtString += sunRiseDt.getUTCMinutes() < 10 ? '0' + sunRiseDt.getUTCMinutes() : sunRiseDt.getUTCMinutes();
+        //sunRiseDt.setSeconds(sunRiseDt.getSeconds() + weatherData.timezone);
+        let sunRiseDtString = (sunRiseDt.getUTCHours() < 10 ? '0' + sunRiseDt.getUTCHours() : sunRiseDt.getUTCHours()) + ':';
+        sunRiseDtString += sunRiseDt.getUTCMinutes() < 10 ? '0' + sunRiseDt.getUTCMinutes() : sunRiseDt.getUTCMinutes();
 
-
-
-            const sunSetDt = new Date(this.props.weatherData.sys.sunset);
-            //sunSetDt.setSeconds(sunSetDt.getSeconds() + weatherData.timezone);
-            let sunSetDtString = (sunSetDt.getUTCHours() < 10 ? '0' + sunSetDt.getUTCHours() : sunSetDt.getUTCHours()) + ':';
-            sunSetDtString += sunSetDt.getUTCMinutes() < 10 ? '0' + sunSetDt.getUTCMinutes() : sunSetDt.getUTCMinutes();
+        const sunSetDt = new Date(this.props.weatherData.sys.sunset);
+        //sunSetDt.setSeconds(sunSetDt.getSeconds() + weatherData.timezone);
+        let sunSetDtString = (sunSetDt.getUTCHours() < 10 ? '0' + sunSetDt.getUTCHours() : sunSetDt.getUTCHours()) + ':';
+        sunSetDtString += sunSetDt.getUTCMinutes() < 10 ? '0' + sunSetDt.getUTCMinutes() : sunSetDt.getUTCMinutes();
 
       return (
         <>
@@ -48,9 +46,6 @@ class SunRiseSet extends React.Component {
                     24
                 </div>
             </div>
-
-
-            
         </>
       )
     }
