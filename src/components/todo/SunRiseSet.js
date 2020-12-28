@@ -16,7 +16,7 @@ class SunRiseSet extends React.Component {
         <>
             <div className="row">
                 <div className="col-sm sunSetRise">
-                    <img title="Sunrise" alt="Sunrise" src="http://openweathermap.org/img/wn/01d.png" className="img-responsive"  />
+                    <img title="Sunrise" alt="Sunrise" src="https://openweathermap.org/img/wn/01d.png" className="img-responsive"  />
                 </div>
                 <div className="col-sm sunSetRiseTemps">
                     {sunRiseDtString}
@@ -24,7 +24,7 @@ class SunRiseSet extends React.Component {
             </div>
             <div className="row">
                 <div className="col-sm sunSetRise">
-                    <img title="Sunset" alt="Sunset" src="http://openweathermap.org/img/wn/01n.png" className="img-responsive"  />
+                    <img title="Sunset" alt="Sunset" src="https://openweathermap.org/img/wn/01n.png" className="img-responsive"  />
                 </div>
                 <div className="col-sm sunSetRiseTemps">
                     {sunSetDtString}

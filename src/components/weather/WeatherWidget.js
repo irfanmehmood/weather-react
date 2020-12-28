@@ -18,7 +18,7 @@ function WeatherWidget(props) {
     
     dispatch({type: 'setAjaxLoading', payload: true});
 
-    axios.get(`http://weather.digitalcook.co.uk:8001/api/city/weather/${cityID}`)
+    axios.get(`https://api.weather.digitalcook.co.uk:8001/api/city/weather/${cityID}`)
       .then(result => {
         dispatch({
             type: 'setWeatherData', 
@@ -33,7 +33,6 @@ function WeatherWidget(props) {
   let BodyComponent;
 
   if (appState.AjaxLoading === false) {
-    //console.log('Got Data Rendering');
     BodyComponent = <BodyContainer />
   } else {
     BodyComponent = <p className='todayDetails'>Loading .....</p>;
