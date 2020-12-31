@@ -9,6 +9,9 @@
     width: 60px;
 }
 
+.apexcharts-tooltip, .apexcharts-tooltip apexcharts-theme-light {
+  display:none;
+}
 .arrow-left {
   cursor: pointer;
     height: 80px;

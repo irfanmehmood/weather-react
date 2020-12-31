@@ -31,7 +31,7 @@ function ForecastChart(props) {
                 categories: xAxisLabels,
                 labels: {
                     style: {
-                        colors: [],
+                        colors: ['#FFD632'],
                         fontSize: '14px',
                         cssClass: 'apexcharts-xaxis-label',
                     },
@@ -42,7 +42,13 @@ function ForecastChart(props) {
   
         var gridData = { show: false };
         
-        var chartData = { toolbar: { show: false } };
+        var chartData = { 
+            toolbar: { show: false },
+            zoom : {
+                enabled: false,
+                show: false
+            }
+         };
         var colors = ['#FFD632'];
         var markers = {
             show: false
@@ -52,14 +58,12 @@ function ForecastChart(props) {
             'markers' : markers, 
             'colors': colors, 
             'xaxis' : xaxis,
-            'yaxis' : {tooltip: {
-                enabled: false,
-                offsetY: 0,
-                style: {
-                  fontSize: 0,
-                  fontFamily: 0,
+            'yaxis' : {
+                labels: {
+                    show: false,
                 },
-            }},
+                show: false,
+            },
             'grid' : gridData,
             'fill':  {
                 'colors' : ['#FFF5CC', '#FFF5CC'],
@@ -75,7 +79,7 @@ function ForecastChart(props) {
                     colors: ['black']
                 },
                 offsetX: 0,
-                cssClass: 'apexcharts-xaxis-values',
+                cssClass: 'apexcharts-xaxis-values'
             },
             'annotations': {
                 show: false

@@ -4,6 +4,13 @@ npm install
 #Build Project
 npm run build
 
-Run Project
+#Do not update, it breaks UI element
+npm update
+
+#Run Project on node
 npm run start
+
+#Run project on Nginx
+/build/index.html
+
 
